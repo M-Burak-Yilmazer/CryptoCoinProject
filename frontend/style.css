@@ -1,0 +1,16 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+ 
+}
+.nav{
+    background-image: url(./assets/img/bitcoin-2651926_1280.jpg);
+    
+    background-size: cover;
+    background-position:center;
+    height: 15%;
+    background-repeat: no-repeat;
+
+
+}
