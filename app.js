@@ -28,11 +28,9 @@ const getData = (data) => {
   fecthData.forEach((coin) => {
     tableData.innerHTML += `
     <tr>
-    <td class="d-none d-md-table-cell " style="color:${coin.color}">${
-      coin.name
-    }</td>
+    <td  style="color:${coin.color}">${coin.name}</td>
     <td>${coin.rank}</td>
-    <td >${new Intl.NumberFormat("en-US", {
+    <td class="d-none d-md-table-cell ">${new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
     }).format(coin.price)}</td>
@@ -74,11 +72,9 @@ document.getElementById("search-box").addEventListener("input", (e) => {
   filtered.forEach((coin) => {
     tableData.innerHTML += `
     <tr>
-    <td class="d-none d-md-table-cell " style="color:${coin.color}">${
-      coin.name
-    }</td>
+    <td  style="color:${coin.color}">${coin.name}</td>
     <td>${coin.rank}</td>
-    <td >${new Intl.NumberFormat("en-US", {
+    <td class="d-none d-md-table-cell ">${new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
     }).format(coin.price)}</td>
