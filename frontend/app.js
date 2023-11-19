@@ -20,9 +20,9 @@ function getFecth() {
     .catch((err) => console.log(err));
 }
 
-window.addEventListener("load", () =>{
-    getFecth()
-})
+window.addEventListener("load", () => {
+  getFecth();
+});
 
 const getData = (data) => {
   fecthData.forEach((coin) => {
@@ -59,6 +59,18 @@ document.getElementById("search-box").addEventListener("input", (e) => {
   let filtered = fecthData.filter((coin) =>
     coin.name.toLowerCase().includes(inputValue.toLowerCase())
   );
+  console.log(filtered);
+  if (!filtered.length) {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "There are no coins in the values you enter.!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
+   
+  }
   filtered.forEach((coin) => {
     tableData.innerHTML += `
     <tr>
@@ -93,6 +105,7 @@ tableData.addEventListener("click", (e) => {
   let filtered = fecthData.filter(
     (coin) => coin.name.toLowerCase() == selectedValue.toLowerCase()
   );
+
   filtered.forEach((coin) => {
     showTable.innerHTML = `
  <section id="card">
@@ -110,17 +123,11 @@ tableData.addEventListener("click", (e) => {
      <img class="mb-2" src="${coin.iconUrl}" height="50" width="50">
       <p style="color: ${
         coin.change > 0 ? "green" : "red"
-      }"><i class="fas fa-chart-line"></i>  ${
-      coin.change
-    }</p>
+      }"><i class="fas fa-chart-line"></i>  ${coin.change}</p>
     </section>`;
   });
 
-document.querySelector("#exit").addEventListener("click", ()=>{
-
+  document.querySelector("#exit").addEventListener("click", () => {
     location.reload();
-     
-})
-
-
+  });
 });
