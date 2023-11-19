@@ -66,8 +66,6 @@ document.getElementById("search-box").addEventListener("input", (e) => {
       showConfirmButton: false,
       timer: 1500,
     });
-
-   
   }
   filtered.forEach((coin) => {
     tableData.innerHTML += `
